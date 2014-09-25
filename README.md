@@ -4,12 +4,12 @@ Set up selenium in Debian-like systems.
 
 #### Requirements
 
-* `curl`
-* `php` (5.3.2+)
+* `java`
 
 #### Variables
 
-* `selenium_install_dir` [default: `/usr/local/bin`]: Install directory
+* `selenium_install_dir`: [default: `/opt`] Install directory
+* `selenium_version`: [default: `2.43.1`] Install version
 
 ## Dependencies
 
