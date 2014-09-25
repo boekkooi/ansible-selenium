@@ -9,7 +9,7 @@
   tags: [configuration, selenium, selenium-download]
 
 - name: install
-  template: src=init.j2 dest=/etc/init.d/selenium
+  template: src=init.j2 dest=/etc/init.d/selenium owner=root group=root mode=0755
   tags: [configuration, selenium, selenium-install]
 
 - name: run
