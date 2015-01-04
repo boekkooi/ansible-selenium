@@ -9,7 +9,7 @@ Set up selenium in Debian-like systems.
 #### Variables
 
 * `selenium_install_dir`: [default: `/opt`] Install directory
-* `selenium_version`: [default: `2.43.1`] Install version
+* `selenium_version`: [default: `2.44.0`] Install version
 
 ## Dependencies
 
