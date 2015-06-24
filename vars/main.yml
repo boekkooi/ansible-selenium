@@ -1,2 +1,3 @@
 ---
-# vars file for selenium
+
+current_dir: "{{ lookup('pipe','pwd') }}"

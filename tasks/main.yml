@@ -5,8 +5,19 @@
   tags: [configuration, selenium, selenium-create-directory]
 
 - name: download
-  get_url: "url=http://selenium-release.storage.googleapis.com/{{ selenium_version | regex_replace('\\.[0-9]+$', '') }}/selenium-server-standalone-{{ selenium_version }}.jar dest=/opt/selenium/selenium-server-standalone-{{ selenium_version }}.jar"
+  connection: local
+  sudo: false
+  get_url:
+    url=http://selenium-release.storage.googleapis.com/{{ selenium_version | regex_replace('\\.[0-9]+$', '') }}/selenium-server-standalone-{{ selenium_version }}.jar
+    dest={{ current_dir }}/selenium-server-standalone-{{ selenium_version }}.jar
   tags: [configuration, selenium, selenium-download]
+
+- name: copy to server
+  copy:
+    src={{ current_dir }}/selenium-server-standalone-{{ selenium_version }}.jar
+    dest={{ selenium_install_dir }}/selenium/selenium-server-standalone-{{ selenium_version }}.jar
+    mode=0644
+  tags: [configuration, selenium, selenium-install]
 
 - name: install
   template: src=init.j2 dest=/etc/init.d/selenium owner=root group=root mode=0755
